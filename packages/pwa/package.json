@@ -1,0 +1,38 @@
+{
+  "name": "pwa",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@inst-app/serverless-pwa": "^1.0.4"
+  },
+  "dependencies": {
+    "@inst-app/static-pwa": "^1.0.3",
+    "@jaredlunde/react-with-sticky": "^1.0.4"
+  },
+  "inst": {
+    "type": "pwa",
+    "awsProfile": {
+      "staging": "instaspace-dev",
+      "production": "instaspace-prod"
+    },
+    "s3": {
+      "staging": "lunde-staging-public",
+      "production": "lunde-public"
+    }
+  },
+  "sideEffects": false,
+  "scripts": {
+    "edit": "atom ./",
+    "start": "inst start",
+    "start-ssr": "inst start --ssr",
+    "deploy": "inst deploy",
+    "deploy:prod": "inst deploy -p",
+    "deploy-client": "inst deploy-client",
+    "deploy-client:prod": "inst deploy-client -p",
+    "deploy-server": "inst deploy-server",
+    "deploy-server:prod": "inst deploy-server -p",
+    "deploy-init": "inst deploy --init",
+    "deploy-init:prod": "inst deploy -p --init"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "jared-lunde-monorepo",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaredLunde/jared-lunde"
+  },
+  "inst": {
+    "root": true
+  },
+  "author": "Jared Lunde",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaredLunde/jared-lunde/issues"
+  },
+  "private": true,
+  "workspaces": [
+    "packages/public",
+    "packages/shared",
+    "packages/pwa"
+  ],
+  "scripts": {
+    "create-api": "inst create-api --cwd packages",
+    "create-native": "inst create-native --cwd packages",
+    "create-pwa": "inst create-pwa --cwd packages",
+    "create-shared": "inst create-shared --cwd packages",
+    "edit": "atom ./",
+    "shared": "INIT_CWD=packages/shared yarn run --cwd=packages/shared",
+    "pwa": "INIT_CWD=packages/pwa yarn run --cwd=packages/pwa"
+  },
+  "__path": "/Users/jaredlunde/pkg/jared-lunde/package.json"
+}

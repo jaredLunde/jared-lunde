@@ -1,0 +1,9 @@
+stage: 'production'
+main:
+  tags:
+    stack: production
+customDomain:
+  domainName: jaredlunde.com
+  createRoute53Record: true
+webpack:
+  config: 'config/server/webpack.production.js'

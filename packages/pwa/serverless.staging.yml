@@ -1,0 +1,9 @@
+stage: 'staging'
+main:
+  tags:
+    stack: staging
+customDomain:
+  domainName: staging.jaredlunde.com
+  createRoute53Record: true
+webpack:
+  config: 'config/server/webpack.staging.js'
