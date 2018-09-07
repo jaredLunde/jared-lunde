@@ -51,8 +51,9 @@ export default class Home extends React.PureComponent {
           <title>Jared Lunde -  💻 ⚛️🎨⚾🤔🧘</title>
           <meta
             name='description'
-            content='Jared Lunde is a full-stack developer in Denver, Colorado specializing in serverless universal React applications.'
+            content='Jared Lunde is a fullstack developer in Denver, Colorado specializing in serverless universal React applications.'
           />
+          <link rel='canonical' href='https://jaredlunde.com/'/>
         </Helmet>
 
         <Cover

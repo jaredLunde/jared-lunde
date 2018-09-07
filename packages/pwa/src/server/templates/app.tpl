@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
+  <meta name="google-site-verification" content="0L8RZ2nrOELypp4uek73-wI_MBwoVSahGmSKiPh6xpg" />
+  
   <!-- publicPath prefetch/preconnect -->
   <: if publicPath .startsWith('https://') :>
     <link rel="dns-prefetch" href="<: publicPath :>">

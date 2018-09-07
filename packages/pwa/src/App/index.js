@@ -69,13 +69,14 @@ injectGlobal`
 
 export default function App (props = emptyObj) {
   // creates the router context
+  /**
   const Router = props.router || ReactRouter
   let {history} = props
 
   if (history === void 0) {
     history = browserHistory
   }
-
+  */
   return (
     <Lazy.Provider chunkCache={props.chunkCache}>
       <ThemeProvider theme={theme}>
