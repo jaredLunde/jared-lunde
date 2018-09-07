@@ -11,7 +11,8 @@
     "@jaredlunde/react-with-sticky": "^1.0.4",
     "@render-props/hover": "^0.1.10",
     "@render-props/rect": "^0.1.16",
-    "@render-props/size-observer": "^0.1.12"
+    "@render-props/size-observer": "^0.1.12",
+    "express": "^4.16.3"
   },
   "inst": {
     "type": "pwa",

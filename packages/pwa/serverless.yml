@@ -15,7 +15,7 @@ iamRoleStatements:
 functions:
   main:
     handler: render.main
-    memorySize: 1536
+    memorySize: ${self:custom.stack.main.memorySize}
     timeout: 12
     events:
       - http: GET /
