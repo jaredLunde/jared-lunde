@@ -20,7 +20,7 @@ injectGlobal`
 
   body {
     quotes: "“" "”";
-    background-color: ${theme.colors.black};
+    background-color: ${theme.colors.darkerGrey};
   }
 
   svg:not(:root) {

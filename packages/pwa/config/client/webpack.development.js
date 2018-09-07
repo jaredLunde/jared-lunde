@@ -20,7 +20,6 @@ module.exports = instWebpack.createDevelopment({
   },
 
   plugins: [
-    ...defaults.plugins,
-    new webpack.HotModuleReplacementPlugin(),
+    ...defaults.plugins
   ]
 })

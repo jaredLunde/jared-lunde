@@ -37,6 +37,9 @@
   <: helmet.meta :>
 
   <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="<: publicPath :>images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="<: publicPath :>images/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="<: publicPath :>images/favicon-16x16.png">
   <link rel="shortcut icon" type="image/x-icon" href="<: publicPath :>images/favicon.ico">
   <link rel="icon" type="image/x-icon" href="<: publicPath :>images/favicon.ico">
 
@@ -59,9 +62,7 @@
     </div>
   </noscript>
 
-  <div id="⚛️">
-    <: page :>
-  </div>
+  <div id="⚛️"><: page :></div>
 
   <div id="portals"></div>
 

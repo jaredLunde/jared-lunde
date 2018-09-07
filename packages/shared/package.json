@@ -7,7 +7,8 @@
   "sideEffects": false,
   "devDependencies": {},
   "dependencies": {
-    "@inst-app/static-pwa": "^1.0.3"
+    "@inst-app/static-pwa": "^1.0.3",
+    "@jaredlunde/react-picture": "^1.0.1"
   },
   "inst": {
     "type": "shared"

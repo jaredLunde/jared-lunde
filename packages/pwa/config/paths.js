@@ -12,9 +12,9 @@ module.exports = {
   appSrc: join('src/App'),
   clientSrc: join('src/client'),
   serverSrc: join('src/server'),
-  
+
   inheritsSrc: join('../shared/src'),
-  
+
   clientDist: join('dist/client'),
   serverDist: join('dist/server'),
   devServerDist: join('dist/dev-server'),
@@ -22,5 +22,5 @@ module.exports = {
 
   publicDevelopmentPath: '/public/',
   publicStagingPath: `https://${pkgJSON.inst.s3.staging}.s3.amazonaws.com/`,
-  publicProductionPath: `https://${pkgJSON.inst.s3.production}.s3.amazonaws.com/`,
+  publicProductionPath: `https://cdn.jaredlunde.com/`,
 }

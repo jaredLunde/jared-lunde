@@ -8,7 +8,10 @@
   },
   "dependencies": {
     "@inst-app/static-pwa": "^1.0.3",
-    "@jaredlunde/react-with-sticky": "^1.0.4"
+    "@jaredlunde/react-with-sticky": "^1.0.4",
+    "@render-props/hover": "^0.1.10",
+    "@render-props/rect": "^0.1.16",
+    "@render-props/size-observer": "^0.1.12"
   },
   "inst": {
     "type": "pwa",
