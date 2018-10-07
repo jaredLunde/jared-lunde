@@ -10,9 +10,12 @@
     "@inst-app/static-pwa": "^1.0.3",
     "@jaredlunde/react-with-sticky": "^1.0.4",
     "@render-props/hover": "^0.1.10",
+    "@render-props/paragraphs": "^0.1.9",
     "@render-props/rect": "^0.1.16",
     "@render-props/size-observer": "^0.1.12",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "react-portalize": "^0.1.9",
+    "react-router-transition": "^1.2.1"
   },
   "inst": {
     "type": "pwa",
@@ -30,13 +33,13 @@
     "edit": "atom ./",
     "start": "inst start",
     "start-ssr": "inst start --ssr",
-    "deploy": "inst deploy",
-    "deploy:prod": "inst deploy -p",
-    "deploy-client": "inst deploy-client",
-    "deploy-client:prod": "inst deploy-client -p",
-    "deploy-server": "inst deploy-server",
-    "deploy-server:prod": "inst deploy-server -p",
-    "deploy-init": "inst deploy --init",
-    "deploy-init:prod": "inst deploy -p --init"
+    "deploy": "inst deploy staging",
+    "deploy:prod": "inst deploy production",
+    "deploy-client": "inst deploy-client staging",
+    "deploy-client:prod": "inst deploy-client production",
+    "deploy-server": "inst deploy-server staging",
+    "deploy-server:prod": "inst deploy-server production",
+    "deploy-init": "inst deploy staging --init",
+    "deploy-init:prod": "inst deploy production --init"
   }
 }

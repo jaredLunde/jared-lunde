@@ -1,14 +1,14 @@
 import {createRoute} from '@inst-app/router'
 import lazy from '@inst-app/ssr/lazy.macro'
-import {home} from '~/sitemap'
+import {resume} from '~/sitemap'
 import {AnimatedRoute, Loading} from './components'
 
 
-const HomePage = lazy('../pages/Home', {loading: Loading})
+export const ResumePage = lazy('../pages/Resume', {loading: Loading})
 
 export default createRoute({
-  path: home(),
+  path: resume(),
   exact: true,
-  component: HomePage,
+  component: ResumePage,
   routeComponent: AnimatedRoute
 })

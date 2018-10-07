@@ -16,7 +16,7 @@ const grayScale = {
   darkerGrey: lighten(0.1, black),
   darkGrey: darken(0.05, grey),
   grey,
-  lightGrey: lighten(0.38, grey),
+  lightGrey: lighten(0.24, grey),
   lighterGrey: lighten(0.55, grey),
   lightestGrey: lighten(0.60, grey),
   translucentWhite,
@@ -48,10 +48,10 @@ export default {
   darkAccent: grayScale.darkerGrey,
 
   primaryText: grayScale.white,
-  secondaryText: grayScale.grey,
+  secondaryText: grayScale.darkGrey,
 
   primaryLink: grey,
-  secondaryLink: red,
+  secondaryLink: blue,
 
   hover: {
     primaryLink: grayScale.darkerGrey,

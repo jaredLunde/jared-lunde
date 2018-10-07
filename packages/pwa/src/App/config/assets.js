@@ -10,12 +10,12 @@ if (__STAGE__ === 'development') {
 }
 
 
-export let path = paths.publicDevelopmentPath
+export let path = paths.publicPath.development
 
 switch (__STAGE__) {
-  case 'staging':    path = paths.publicStagingPath
+  case 'staging':    path = paths.publicPath.staging
   break;
-  case 'production': path = paths.publicProductionPath
+  case 'production': path = paths.publicPath.production
 }
 
 if (path[path.length - 1] === '/') {

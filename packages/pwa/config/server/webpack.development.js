@@ -1,20 +1,10 @@
 const instWebpack = require('@inst-app/webpack')
-const path = require('path')
 const defaults = require('./defaults')
-const appPaths = require('../paths')
+let createConfig = instWebpack.createDevelopment
 
 
-module.exports = instWebpack.createDevelopment({
-  ...defaults,
-  target: 'node',
+if (process.env.NODE_ENV === 'production') {
+  createConfig = instWebpack.createProduction
+}
 
-  entry: {
-    m: [path.join(appPaths.serverSrc, 'render.development.js')]
-  },
-
-  output: {
-    ...defaults.output,
-    path: path.join(appPaths.devServerDist, 'server'),
-    filename: 'render.development.js'
-  }
-})
+module.exports = createConfig(defaults, {target: 'node'})

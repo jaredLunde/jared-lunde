@@ -1,3 +1,4 @@
 export default {
-  primary: '"CentimaMono", -apple-system, "Helvetica Neue", sans-serif'
+  primary: '"SF", -apple-system, "Helvetica Neue", sans-serif',
+  secondary: '"CentimaMono", monospace',
 }

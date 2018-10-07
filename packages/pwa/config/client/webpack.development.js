@@ -1,25 +1,93 @@
 const instWebpack = require('@inst-app/webpack')
-const path = require('path')
 const webpack = require('webpack')
-const pkgJSON = require('../../package.json')
-const appPaths = require('../paths')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const defaults = require('./defaults')
+let envDefaults = {}
+let createConfig = instWebpack.createDevelopment
 
 
-module.exports = instWebpack.createDevelopment({
-  ...defaults,
+if (process.env.NODE_ENV === 'production') {
+  createConfig = instWebpack.createProduction
+  envDefaults = {
+    plugins: [
+      ...defaults.plugins,
+      new webpack.optimize.AggressiveSplittingPlugin({
+        minSize: 24000,
+        maxSize: 96000
+      }),
+      new webpack.LoaderOptionsPlugin({minimize: false, debug: false}),
+    ],
 
-  entry: [path.join(appPaths.clientSrc, 'render.development.js')],
+    optimization: {
+      minimize: true,
+      minimizer: [
+        new UglifyJsPlugin({
+          cache: true,
+          uglifyOptions: {
+            compress: {
+              passes: 2,
+              keep_infinity: true,
+              drop_console: true,
+              pure_getters: 'strict',
+              unsafe: true,
+              unsafe_comps: true,
+              unsafe_Function: true,
+              unsafe_math: true,
+              unsafe_regexp: true,
+              unsafe_undefined: true,
+              warnings: false,
+              dead_code: true
+            },
+            output: {
+              comments: false
+            },
+            sourceMap: false
+          }
+        })
+      ],
 
-  output: {
-    ...defaults.output,
-    path: path.join(appPaths.devServerDist, 'client'),
-    filename: `js/${pkgJSON.name}.development.js`,
-    chunkFilename: `js/${pkgJSON.name}.development.[chunkhash].js`,
-    publicPath: appPaths.publicDevelopmentPath
-  },
+      splitChunks: {
+        chunks: 'all',
+        minSize: 0,
+        maxAsyncRequests: Infinity,
+        maxInitialRequests: Infinity,
+        name: true,
+        cacheGroups: {
+          default: {
+            chunks: 'async',
+            minSize: 24 * 1000,
+            minChunks: 1,
+            maxAsyncRequests: 8,
+            maxInitialRequests: 8,
+            priority: -20,
+            reuseExistingChunk: true,
+          },
 
-  plugins: [
-    ...defaults.plugins
-  ]
-})
+          pages: {
+            name: 'pages',
+            chunks: 'initial',
+            minSize: 0,
+            minChunks: 1,
+            maxAsyncRequests: 16,
+            maxInitialRequests: 16,
+            priority: -1,
+            reuseExistingChunk: true,
+            test: function(module) {
+              return module.resource && module.resource.match(/\/pages\//)
+            },
+          }
+        },
+      }
+    }
+  }
+}
+
+module.exports = createConfig(
+  defaults,
+  envDefaults,
+  {
+    output: {
+      globalObject: 'this'
+    }
+  }
+)

@@ -15,12 +15,15 @@ module.exports = {
 
   inheritsSrc: join('../shared/src'),
 
-  clientDist: join('dist/client'),
-  serverDist: join('dist/server'),
-  devServerDist: join('dist/dev-server'),
+  dist: join('dist'),
   modules: join('node_modules'),
 
-  publicDevelopmentPath: '/public/',
-  publicStagingPath: `https://${pkgJSON.inst.s3.staging}.s3.amazonaws.com/`,
-  publicProductionPath: `https://cdn.jaredlunde.com/`,
+  publicPath: {
+    development: '/public/',
+    staging: `https://${pkgJSON.inst.s3.staging}.s3.amazonaws.com/`,
+    production: `https://cdn.jaredlunde.com/`
+  }
 }
+
+
+console.log(module.exports.inheritsSrc)

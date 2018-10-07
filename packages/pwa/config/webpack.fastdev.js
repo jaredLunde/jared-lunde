@@ -16,10 +16,11 @@ module.exports = instWebpack.createDevelopment({
   entry: [path.join(appPaths.clientSrc, 'render.development')],
 
   output: {
-    path: appPaths.devServerDist,
-    filename: `${pkgJSON.name}-development.js`,
-    chunkFilename: '${pkgJSON.name}-development.[chunkhash].js',
-    publicPath: appPaths.publicDevelopmentPath
+    path: path.join(appPaths.dist, 'development'),
+    globalObject: 'this',
+    filename: `${pkgJSON.name}.js`,
+    chunkFilename: '${pkgJSON.name}.[chunkhash].js',
+    publicPath: appPaths.publicPath.development
   },
 
   ...defaults,
@@ -27,7 +28,7 @@ module.exports = instWebpack.createDevelopment({
   module: serverConfig.module,
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin({multiStep: true}),
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.optimize.LimitChunkCountPlugin({
       maxChunks: 1
     }),

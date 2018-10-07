@@ -2,7 +2,7 @@ export default {
   scale: {
     xxs: 0.67,
     xs: 0.85,
-    sm: 1.125,
+    sm: 1.0,
     md: 1.3125,
     lg: 1.67,
     xl: 2.25,

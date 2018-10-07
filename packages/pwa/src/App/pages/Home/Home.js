@@ -1,42 +1,36 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import {Type, Row, Box, A} from 'styled-curls'
+import {BreakPoint, Type, Row, H1, H2, Box, A, Link} from 'styled-curls'
 import pure from 'react-purity'
 import Hover from '@render-props/hover'
-import {Icon, TransitionScale, TransitionDrop} from '@jaredlunde/curls-addons'
+import {Icon} from '@jaredlunde/curls-addons'
+import {ResumePage} from '~/@routes/Resume'
+import {resume} from '~/sitemap'
 import {assets} from '~/config'
-import {Hero, Content, Cover} from '~/ui'
+import {Hero, Content, Cover, Header, Menu, SideBar} from '~/ui'
 
 
-const TransitionIcon = pure(
-  ({delay, speed, ...props}) => (
-    <TransitionDrop fromBottom delay={delay} easing='swiftMove' speed={speed}>
-      {({className}) => <Icon {...props} className={className}/>}
-    </TransitionDrop>
-  )
-)
-
-const bgSrcSet = [
+export const bgSrcSet = [
   {
-    src: assets.resolveImg('rocky-mountains-colorado.jpg'),
+    src: require('~/public/images/rocky-mountains-colorado.jpg'),
     mime: 'image/jpeg',
     width: 1284,
     height: 673
   },
   {
-    src: assets.resolveImg('rocky-mountains-colorado.webp'),
+    src: require('~/public/images/rocky-mountains-colorado.webp'),
     mime: 'image/webm',
     width: 1284,
     height: 673
   },
   {
-    src: assets.resolveImg('rocky-mountains-colorado--sm.jpg'),
+    src: require('~/public/images/rocky-mountains-colorado--sm.jpg'),
     mime: 'image/jpeg',
     width: 600,
     height: 314
   },
   {
-    src: assets.resolveImg('rocky-mountains-colorado--sm.webp'),
+    src: require('~/public/images/rocky-mountains-colorado--sm.webp'),
     mime: 'image/webm',
     width: 600,
     height: 314
@@ -48,100 +42,119 @@ export default class Home extends React.PureComponent {
     return (
       <Hero p={0} ov='hidden' bg='darkestGrey'>
         <Helmet>
-          <title>Jared Lunde -  💻 ⚛️🎨⚾🤔🧘</title>
+          <title>Jared Lunde -  💻 ⚛️🎨🧘</title>
           <meta
             name='description'
             content='Jared Lunde is a fullstack developer in Denver, Colorado specializing in serverless universal React applications.'
           />
           <link rel='canonical' href='https://jaredlunde.com/'/>
         </Helmet>
-
-        <Cover
-          srcset={bgSrcSet}
-          alt={`A picture of Colorado's Rocky Mountain National Park taken by Jared Lunde.`}
-        />
-
-        <Content tight>
-          <TransitionDrop fromTop={-100} med easing='swiftMove'>
-            {({className}) => (
-              <div className={className}>
-                <Type nodeType='pre' center bold xs w='100%' d='block' m='b4'>
-                  def follow_jared():
-                </Type>
-              </div>
-            )}
-          </TransitionDrop>
-
-          <Row align='center' justify='center' z='1'>
-            <Hover>
-              {({isHovering, hoverRef}) => (
-                <A
-                  d='inlineBlock'
-                  h='64'
-                  w='64'
-                  href='https://instagram.com/jaredlunde'
-                  title='Follow Jared Lunde on Instagram'
-                  innerRef={hoverRef}
-                  css={`${isHovering ? 'opacity: 0.6;' : ''}`}
-                  data-strict
-                >
-                  <TransitionIcon
-                    name='instagram'
-                    color='white'
-                    size={64}
-                    speed='med'
-                  />
-                </A>
+        <BreakPoint sm>
+          {({matches}) => (
+            <Row h='100%'>
+              {matches.sm === true && (
+                <Header/>
               )}
-            </Hover>
+              {matches.sm === false && (
+                <SideBar>
+                  <Row column p='3 y4' align='center'>
+                    <H1 xs m='b4' face='secondary'>
+                      JARED LUNDE
+                    </H1>
 
-            <Hover>
-              {({isHovering, hoverRef}) => (
-                <A
-                  d='inlineBlock'
-                  h='108'
-                  w='108'
-                  m='x4'
-                  href='https://github.com/jaredLunde'
-                  title='Follow Jared Lunde on GitHub'
-                  innerRef={hoverRef}
-                  css={`${isHovering ? 'opacity: 0.6;' : ''}`}
-                  data-strict
-                >
-                  <TransitionIcon
-                    name='gitHub'
-                    color='white'
-                    size={108}
-                    delay={160}
-                  />
-                </A>
-              )}
-            </Hover>
+                    <Box
+                      align='center'
+                      br={1}
+                      w={80}
+                      h={80}
+                      ov='hidden'
+                      data-strict
+                    >
+                      <img
+                        src={require('~/public/images/profile.jpg')}
+                        width={80}
+                        alt='Photo of Jared Lunde'
+                      />
+                    </Box>
+                  </Row>
 
-            <Hover>
-              {({isHovering, hoverRef}) => (
-                <A
-                  d='inlineBlock'
-                  h='64'
-                  w='64'
-                  href='https://twitter.com/jaredLunde'
-                  title='Follow Jared Lunde on Twitter'
-                  innerRef={hoverRef}
-                  css={`${isHovering ? 'opacity: 0.6;' : ''}`}
-                  data-strict
-                >
-                  <TransitionIcon
-                    name='twitter'
-                    color='white'
-                    size={64}
-                    delay={90}
-                    speed='slow'
-                  />
-                </A>
+                  <Menu isVisible/>
+                </SideBar>
               )}
-            </Hover>
-          </Row>
-        </Content>
+
+              <Box flex fluid pos='relative' align='center' justify='center' h='100%'>
+                <Cover
+                  srcset={bgSrcSet}
+                  alt={
+                    `A picture of Colorado's Rocky Mountain National Park ` +
+                    `taken by Jared Lunde.`
+                  }
+                />
+
+                <Box
+                  flex
+                  column
+                  w='100%'
+                  p='3'
+                  align='center'
+                  css='max-width: 400px;'
+                  z={1000}
+                >
+                  <H2
+                    md
+                    ultraHeavy
+                    center
+                    d='block'
+                    w='100%'
+                  >
+                    {matches.sm ? (
+                      <>
+                        I'm a software engineer<br/>
+                        in Denver specializing in<br/>
+                        serverless React and React<br/>
+                        Native applications
+                      </>
+                    ) : (
+                      <>
+                        I'm a software engineer in Denver<br/>
+                        specializing in serverless React and <br/>
+                        React Native applications
+                      </>
+                    )}
+                  </H2>
+
+                  <Link
+                    xs
+                    heavy
+                    flex
+                    to={resume()}
+                    align='center'
+                    justify='center'
+                    color='white'
+                    p='y3'
+                    m='t4'
+                    bc='white'
+                    bw='1'
+                    br='1'
+                    w={196}
+                    face='secondary'
+                    onMouseEnter={ResumePage.load}
+                  >
+                    <Icon
+                      name='paper'
+                      size={16}
+                      m='r2'
+                      pos='relative'
+                    />
+                    <Box nodeType='span' pos='relative' style={{top: 2}}>
+                      VIEW RESUME
+                    </Box>
+                  </Link>
+                </Box>
+              </Box>
+            </Row>
+          )}
+        </BreakPoint>
       </Hero>
     )
   }

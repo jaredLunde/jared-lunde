@@ -3,7 +3,7 @@ import template from '@inst-app/basic-template'
 import * as routes from '../App/@routes'
 import App from '../App'
 import HTML from './templates/app.tpl'
-import robots from './templates/robots.staging.txt'
+import robots from './templates/robots.disallow.txt'
 
 
 const render = template(HTML)

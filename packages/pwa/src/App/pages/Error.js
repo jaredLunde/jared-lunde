@@ -9,8 +9,7 @@ function getExplanation (status) {
     case 404:
       return (
         <>
-          We couldn't find what you<br/>
-          were looking for.
+          Huh, where'd that page go?
         </>
       )
     case 403:
@@ -37,17 +36,9 @@ function getExplanation (status) {
   }
 }
 
-export default function Error ({radar}) {
-  let status, statusText
-
-  if (radar !== void 0) {
-    status = radar.endpoint.response.status
-    statusText = radar.endpoint.response.statusText
-  }
-  else {
-    status = 404
-    statusText = 'Not found'
-  }
+export default function Error () {
+  const status = 404
+  const statusText = 'Not found'
 
   return (
     <>
@@ -58,18 +49,20 @@ export default function Error ({radar}) {
 
       <Hero p='3'>
         {status !== 200 && (
-          <Type xl regular center m='b2'>
+          <Type xl bold center>
             {status}: {statusText}
           </Type>
         )}
 
-        <Type light lg center m='b4' css='line-height: 1.1;'>
+        <Type
+          md
+          light
+          center
+          css='line-height: 1.1;'
+          face='secondary'
+        >
           {getExplanation(status)}
         </Type>
-
-        {radar !== void 0
-          && radar.endpoint.response.status !== 404
-          && Button({onClick: radar.refresh, children: 'Retry'})}
       </Hero>
     </>
   )

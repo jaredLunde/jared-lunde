@@ -12,9 +12,8 @@ module.exports = {
     alias: {
       shared: appPaths.inheritsSrc,
     }
-
   },
-
+  
   inst: {
     include: [
       appPaths.appSrc,
@@ -22,5 +21,5 @@ module.exports = {
       appPaths.clientSrc,
       appPaths.serverSrc,
     ]
-  }
+  },
 }

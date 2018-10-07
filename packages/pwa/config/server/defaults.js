@@ -6,33 +6,27 @@ const appPaths = require('../paths')
 
 
 module.exports = {
+  ...defaults,
+
   name: 'server',
   target: 'lambda',
   rootImportSrc: appPaths.appSrc,
 
-  output: {
-    path: appPaths.serverDist,
-    libraryTarget: 'commonjs2',
+  entry: {
+    m: [path.join(appPaths.serverSrc, `render.${process.env.STAGE}.js`)]
   },
 
-  ...defaults,
+  output: {
+    path: path.join(appPaths.dist, process.env.STAGE, 'server'),
+    filename: 'render.js',
+    libraryTarget: 'commonjs2',
+    publicPath: appPaths.publicPath[process.env.STAGE]
+  },
 
   externals: [
     'encoding',
     'express'
-    /*
-    nodeExternals({
-      modulesDir: '../../../node_modules',
-      whitelist: [
-        /build/,
-        /pwa/,
-        /web/,
-        /panel/,
-        /react-universal-component/,
-        /babel-plugin-universal-import/
-      ]
-    })
-    */
+    // nodeExternals({modulesDir: '../../../node_modules', whitelist: [/web/,]})
   ],
 
   module: {
@@ -47,7 +41,7 @@ module.exports = {
   plugins: [
     new webpack.optimize.LimitChunkCountPlugin({maxChunks: 1}),
     new webpack.DefinePlugin({
-      __PLATFORM__: JSON.stringify('server'),
+      __PLATFORM__: '"server"',
       __STAGE__: JSON.stringify(process.env.STAGE),
       __DEV__: JSON.stringify(process.env.NODE_ENV === 'development')
     })

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="google-site-verification" content="0L8RZ2nrOELypp4uek73-wI_MBwoVSahGmSKiPh6xpg" />
-  
+
   <!-- publicPath prefetch/preconnect -->
   <: if publicPath .startsWith('https://') :>
     <link rel="dns-prefetch" href="<: publicPath :>">
@@ -36,13 +36,6 @@
 
   <!-- Helmet meta -->
   <: helmet.meta :>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="<: publicPath :>images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="<: publicPath :>images/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="<: publicPath :>images/favicon-16x16.png">
-  <link rel="shortcut icon" type="image/x-icon" href="<: publicPath :>images/favicon.ico">
-  <link rel="icon" type="image/x-icon" href="<: publicPath :>images/favicon.ico">
 
   <!-- Helmet links -->
   <: helmet.link :>
