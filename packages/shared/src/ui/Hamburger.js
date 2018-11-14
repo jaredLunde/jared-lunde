@@ -1,6 +1,6 @@
 import React from 'react'
 import {css, cx} from 'emotion'
-import {Button, BasicBox, defaultColors, mergeTheme} from 'styled-curls'
+import {Button, BasicBox, defaultColors, mergeTheme} from 'curls'
 import {Icon} from '@jaredlunde/curls-addons'
 import theme from '~/theme'
 
@@ -19,7 +19,6 @@ const lineCSS = css`
   position: relative;
   contain: layout size;
 `
-
 
 export default function Hamburger (props) {
   const theme = mergeTheme(defaultTheme, props.theme, themePath)

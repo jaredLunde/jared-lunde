@@ -1,6 +1,6 @@
 import React from 'react'
 import Portalize from 'react-portalize'
-import {Type, Button, Drawer, Modal} from 'styled-curls'
+import {Type, Button, Drawer, DrawerBox, Modal, ModalBox} from 'curls'
 import {Icon} from '@jaredlunde/curls-addons'
 import {css} from 'emotion'
 import Hamburger_ from './Hamburger'
@@ -12,23 +12,26 @@ const drawerCSS = css`
 `
 
 export default function HamburgerMenu (props) {
-  return (props.modal ? Modal : Drawer)({
+  const Component = props.modal ? Modal : Drawer
+  const BoxComponent = Component === Modal ? ModalBox : DrawerBox
+
+  return React.createElement(Component, {
     fromBottom: true,
     ...props,
     slow: true,
     className: [drawerCSS, props.className],
-    children: ({DrawerBox, ModalBox, toggle, hide, isVisible, Hamburger}) => (
+    children: ({toggle, hide, isVisible, Hamburger}) => (
       <>
-        <Portalize>
-          {(DrawerBox || ModalBox)({
-            className: drawerCSS,
+        {React.createElement(
+          BoxComponent, {
             w: '100%',
             ov: 'touch',
+            portal: true,
             children: function ({isVisible, show, hide, toggle}) {
               return props.children({isVisible, hide})
             }
-          })}
-        </Portalize>
+          }
+        )}
 
         {(Hamburger || Hamburger_)({onClick: toggle, isVisible})}
       </>

@@ -1,5 +1,5 @@
 import {lighten, darken, rgba} from 'polished'
-import {defaultColors} from 'styled-curls'
+import {defaultColors} from 'curls'
 
 
 const black = '#0A0F0F'
@@ -7,8 +7,9 @@ const grey = '#4A6566'
 const white = '#FAFCFC'
 const translucentWhite = rgba(white, 0.70)
 const blue = '#0073AD'
+const lightBlue = lighten(0.4, '#0073AD')
 const translucentGrey = rgba(grey, 0.70)
-const red = '#FC6868'
+const red = '#FA6868'
 
 const grayScale = {
   black,
@@ -33,7 +34,7 @@ export default {
   darkGreen: '#28af75',
 
   blue,
-  lightBlue: lighten(0.1, blue),
+  lightBlue,
 
   red,
   lightRed: lighten(0.1, red),
@@ -48,10 +49,10 @@ export default {
   darkAccent: grayScale.darkerGrey,
 
   primaryText: grayScale.white,
-  secondaryText: grayScale.darkGrey,
+  secondaryText: grayScale.darkerGrey,
 
   primaryLink: grey,
-  secondaryLink: blue,
+  secondaryLink: lightBlue,
 
   hover: {
     primaryLink: grayScale.darkerGrey,

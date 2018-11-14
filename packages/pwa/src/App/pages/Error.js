@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import {Type, Box} from 'styled-curls'
+import {Type, Box} from 'curls'
 import {Hero, Button} from 'shared/ui'
 
 

@@ -58,8 +58,6 @@
 
   <div id="⚛️"><: page :></div>
 
-  <div id="portals"></div>
-
   <!-- Initial Application State -->
   <: if initialState !== void 0 :>
     <script id="app.initialState" type="application/json">

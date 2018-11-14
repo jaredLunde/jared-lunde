@@ -1,10 +1,11 @@
-import {Type} from 'styled-curls'
+import React from 'react'
+import {Type} from 'curls'
 import pure from 'react-purity'
 import Button from './Button'
 
 
-export default pure(
-  function TypeButton ({typeSize, ...props}) {
+export default React.forwardRef(
+  function TypeButton ({typeSize, ...props}, ref) {
     let typeColor = 'white'
 
     if (props.outline === true) {
@@ -28,6 +29,13 @@ export default pure(
       typeProps[typeSize] = true
     }
 
-    return Button({type: 'button', ...props, children: Type(typeProps)})
+    return React.createElement(
+      Button, {
+        ref,
+        type: 'button',
+        ...props,
+        children: React.createElement(Type, typeProps)
+      }
+    )
   }
 )

@@ -1,7 +1,7 @@
 import React from 'react'
 import {Router as ReactRouter, Switch, Route} from '@inst-app/router'
 import Lazy from '@inst-app/ssr/lazy'
-import {ThemeProvider, browserResets} from 'styled-curls'
+import {ThemeProvider, browserResets} from 'curls'
 import Helmet from 'react-helmet'
 import {injectGlobal} from 'emotion'
 import emptyObj from 'empty/object'
@@ -48,7 +48,6 @@ injectGlobal`
     font-family: "CentimaMono";
     font-style: normal;
     font-weight: 700;
-    font-display: swap;
     src: url(${require('~/public/fonts/CentimaMono-Bold.woff2')}) format("woff2"),
          url(${require('~/public/fonts/CentimaMono-Bold.woff')}) format("woff");
   }
@@ -57,7 +56,6 @@ injectGlobal`
     font-family: "SF";
     font-style: normal;
     font-weight: 700;
-    font-display: swap;
     src: url(${require('~/public/fonts/SF-UI-Display-Heavy.woff2')}) format("woff2"),
          url(${require('~/public/fonts/SF-UI-Display-Heavy.woff')}) format("woff");
   }
@@ -66,7 +64,6 @@ injectGlobal`
     font-family: "SF";
     font-style: normal;
     font-weight: 400;
-    font-display: swap;
     src: url(${require('~/public/fonts/SF-UI-Display-Regular.woff2')}) format("woff2"),
          url(${require('~/public/fonts/SF-UI-Display-Regular.woff')}) format("woff");
   }
@@ -123,6 +120,8 @@ export default function App (props = emptyObj) {
                         href={favicon}
                       />
                     </Helmet>
+
+                    <div id='portals'/>
 
                     <Switch location={location}>
                       {Object.keys(routes).map((key, x) => routes[key].route)}

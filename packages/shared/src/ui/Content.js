@@ -1,6 +1,7 @@
+import React from 'react'
 import {css} from 'emotion'
 import PropTypes from 'prop-types'
-import {createComponent, renderNode, FlexBox} from 'styled-curls'
+import {createComponent, renderNode, FlexBox} from 'curls'
 
 
 const nodeType = 'div'
@@ -31,20 +32,23 @@ const SFC = createComponent({
 })
 
 
-export default function Content (props) {
-  return SFC({
-    __base: true,
-    ...props,
-    children: function (boxProps) {
-      boxProps.children = function (nodeProps) {
-        nodeProps.children = props.children
-        nodeProps.nodeType = nodeProps.nodeType || nodeType
-        delete nodeProps.__base
+export default React.forwardRef(
+  function Content (props, innerRef) {
+    return SFC({
+      __base: true,
+      innerRef,
+      ...props,
+      children: function (boxProps) {
+        boxProps.children = function (nodeProps) {
+          nodeProps.children = props.children
+          nodeProps.nodeType = nodeProps.nodeType || nodeType
+          delete nodeProps.__base
 
-        return renderNode(nodeProps, defaultCSS)
+          return renderNode(nodeProps, defaultCSS)
+        }
+
+        return FlexBox(boxProps)
       }
-
-      return FlexBox(boxProps)
-    }
-  })
-}
+    })
+  }
+)

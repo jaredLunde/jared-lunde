@@ -1,7 +1,17 @@
+import React from 'react'
 import SpinnerButton from './SpinnerButton'
 import TypeButton from './TypeButton'
 
 
-export default function SubmitButton (props) {
-  return SpinnerButton({type: 'submit', ...props, children: props.children || 'Save'})
-}
+export default React.forwardRef(
+  function SubmitButton (props, ref) {
+    return React.createElement(
+      SpinnerButton, {
+        ref,
+        type: 'submit',
+        ...props,
+        children: props.children || 'Save'
+      }
+    )
+  }
+)

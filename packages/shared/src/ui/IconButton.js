@@ -9,7 +9,7 @@ export default pure(
       bg: 'transparent',
       bw: 0,
       ...props,
-      children: Icon({name, size, color})
+      children: React.createElement(Icon, {name, size, color})
     })
   }
 )

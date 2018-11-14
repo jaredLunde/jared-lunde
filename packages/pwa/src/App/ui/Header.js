@@ -10,7 +10,8 @@ import {
   Row,
   Link,
   Box
-} from 'styled-curls'
+} from 'curls'
+import {accel} from 'shared/styles'
 import {Menu, Content, IconButton, HamburgerMenu} from '~/ui'
 import {home} from '~/sitemap'
 import profilePicture from '~/public/images/profile.jpg'
@@ -26,6 +27,7 @@ class Header extends React.PureComponent {
         h={64}
         sh={1}
         z={1001}
+        className={accel}
         data-strict
       >
         <Row justify='between' align='center' css='text-align: center;'>

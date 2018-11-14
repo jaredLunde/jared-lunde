@@ -1,5 +1,5 @@
 import {css} from 'emotion'
-import {withHoverQuery} from 'styled-curls'
+import {withHoverQuery} from 'curls'
 
 
 export default {

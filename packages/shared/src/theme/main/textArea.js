@@ -1,5 +1,5 @@
 import {css} from 'emotion'
-import {colorize} from 'styled-curls'
+import {colorize} from 'curls'
 import input from './input'
 
 

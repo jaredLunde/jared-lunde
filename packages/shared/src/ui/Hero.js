@@ -1,5 +1,5 @@
 import React from 'react'
-import {Hero as CurlsHero} from 'styled-curls'
+import {Hero as CurlsHero} from 'curls'
 
 
 export default class Hero extends React.Component {
@@ -28,14 +28,15 @@ export default class Hero extends React.Component {
       trimHeight.push(this.footerEl)
     }
 
-    return CurlsHero({
-      key: JSON.stringify(this.didMount),
-      p: '3',
-      bg: 'transparent',
-      trimHeight,
-      'data-strict': true,
-      ...props,
-      children
-    })
+    return React.createElement(
+      CurlsHero, {
+        key: `hero-${this.didMount}`,
+        p: '3',
+        trimHeight,
+        'data-strict': true,
+        ...props,
+        children
+      }
+    )
   }
 }

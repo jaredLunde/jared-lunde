@@ -1,5 +1,5 @@
 import React from 'react'
-import {Box} from 'styled-curls'
+import {Box} from 'curls'
 
 
 export default function SideBar (props) {

@@ -1,6 +1,6 @@
 import React from 'react'
 import lazy from '@inst-app/ssr/lazy.macro'
-import {Box} from 'styled-curls'
+import {Box} from 'curls'
 
 
 const lazyOpt = {

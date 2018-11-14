@@ -1,5 +1,5 @@
 import React from 'react'
-import {Row, Type, NavLink} from 'styled-curls'
+import {Row, Type, NavLink} from 'curls'
 import {home} from '~/sitemap'
 
 

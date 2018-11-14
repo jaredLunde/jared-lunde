@@ -1,5 +1,5 @@
 import React from 'react'
-import {Box, A, Type} from 'styled-curls'
+import {Box, A, Type} from 'curls'
 import pure from 'react-purity'
 import {Icon, TransitionScale, TransitionDrop} from '@jaredlunde/curls-addons'
 

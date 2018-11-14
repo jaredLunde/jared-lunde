@@ -1,5 +1,5 @@
 import React from 'react'
-import {Box} from 'styled-curls'
+import {Box} from 'curls'
 import {TransitionFade} from '@jaredlunde/curls-addons'
 import SizeObserver from '@render-props/size-observer'
 import Picture from '@jaredlunde/react-picture'

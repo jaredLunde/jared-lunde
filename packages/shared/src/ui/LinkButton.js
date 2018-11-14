@@ -1,3 +1,4 @@
+import React from 'react'
 import {withRouter} from 'react-router-dom'
 import memoize from 'memoize-two-args'
 import TypeButton from './TypeButton'
@@ -15,6 +16,6 @@ const getOnClick = memoize(
 export default withRouter(
   function LinkButton ({to, history, staticContext, match, location, ...props}) {
     props.onClick = getOnClick(to, history.push)
-    return  TypeButton(props)
+    return React.createElement(TypeButton, props)
   }
 )
