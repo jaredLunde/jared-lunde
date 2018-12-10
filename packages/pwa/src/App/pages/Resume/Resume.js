@@ -19,7 +19,9 @@ function Blurb (props) {
       grow
       basis={props.basis || '33.33%'}
       p='r4'
-      css='min-width: 196px; max-width: 360px;'
+      minW={196}
+      maxW={360}
+      data-autosize
     >
       <H3 sm m='b2' color='secondaryText'>
         {props.title}
@@ -33,12 +35,12 @@ function Blurb (props) {
 }
 
 function BlurbGroup (props) {
-  return <Row wrap m='t3 b3' justify='between' {...props}/>
+  return <Row wrap m='t3 b3' justify='between' {...props} data-autosize/>
 }
 
 function Section ({title, titleSize, children, ...props}) {
   return (
-    <Box nodeType='section' {...props}>
+    <Box nodeType='section' {...props} data-autosize>
       <H2 color='secondaryText' {...{[titleSize || 'md']: true}}>
         {title}
       </H2>
@@ -58,20 +60,20 @@ function GithubBox (props) {
       basis='30%'
       css='min-width: 240px;'
     >
-      <Box bg='secondaryText' br={1}>
-        <Box p='3'>
+      <Box bg='secondaryText' br={1} data-autosize>
+        <Box p='3' data-autosize>
           <Type md regular color='secondaryLink'>
             {props.pkg}
           </Type>
         </Box>
 
-        <Box p='x3'>
+        <Box p='x3' data-autosize>
           <Type sm>
             {props.children}
           </Type>
         </Box>
 
-        <Row wrap p='3'>
+        <Row wrap p='3' data-autosize>
           {props.tags.map(
             tag => <Type key={tag} xs m='r2' children={tag}/>
           )}
@@ -95,7 +97,7 @@ export default function Resume (prop) {
 
       <Header/>
 
-      <Content tight nodeType='main' p='l3 y4' pos='relative' z={1000}>
+      <Content tight nodeType='main' p='l3 y4' pos='relative' z={1000} data-autosize>
         <Section title='Jared Lunde' titleSize='lg' m='b4' p='r3'>
           <H3 regular md m='b3' color='secondaryText'>
             Software Engineer, UI/UX Designer

@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import {BreakPoint, Row, H1, H2, Box, Link} from 'curls'
 import {Icon} from '@jaredlunde/curls-addons'
+import {getDefaultBreakPoints} from 'shared/utils'
 import {ResumePage} from '~/@routes/Resume'
 import {resume} from '~/sitemap'
 import {assets} from '~/config'
@@ -47,15 +48,16 @@ export default class Home extends React.PureComponent {
           />
           <link rel='canonical' href='https://jaredlunde.com/'/>
         </Helmet>
-        <BreakPoint sm>
+
+        <BreakPoint sm defaultMatches={getDefaultBreakPoints('sm')}>
           {({matches}) => (
-            <Row h='100%'>
+            <Row h='100%' data-strict>
               {matches.sm === true && (
                 <Header/>
               )}
               {matches.sm === false && (
                 <SideBar>
-                  <Row column p='3 y4' align='center'>
+                  <Row column p='3 y4' align='center' data-autosize>
                     <H1 xs m='b4' face='secondary'>
                       JARED LUNDE
                     </H1>
@@ -80,7 +82,7 @@ export default class Home extends React.PureComponent {
                 </SideBar>
               )}
 
-              <Box flex fluid pos='relative' align='center' justify='center' h='100%'>
+              <Box flex fluid pos='relative' align='center' justify='center' h='100%' data-autosize>
                 <Cover
                   srcset={bgSrcSet}
                   alt={
@@ -97,6 +99,7 @@ export default class Home extends React.PureComponent {
                   align='center'
                   maxW='456'
                   z={1000}
+                  data-autosize
                 >
                   <H2
                     md
@@ -144,6 +147,7 @@ export default class Home extends React.PureComponent {
                       m='r2'
                       pos='relative'
                     />
+
                     <Box nodeType='span' pos='relative' style={{top: 2}}>
                       VIEW RESUME
                     </Box>

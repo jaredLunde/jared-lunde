@@ -26,6 +26,3 @@ module.exports = {
     production: `https://cdn.jaredlunde.com/`
   }
 }
-
-
-console.log(module.exports.inheritsSrc)

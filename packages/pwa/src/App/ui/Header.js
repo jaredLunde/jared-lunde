@@ -12,6 +12,7 @@ import {
   Box
 } from 'curls'
 import {accel} from 'shared/styles'
+import {getDefaultBreakPoints} from 'shared/utils'
 import {Menu, Content, IconButton, HamburgerMenu} from '~/ui'
 import {home} from '~/sitemap'
 import profilePicture from '~/public/images/profile.jpg'
@@ -30,8 +31,8 @@ class Header extends React.PureComponent {
         className={accel}
         data-strict
       >
-        <Row justify='between' align='center' css='text-align: center;'>
-          <BreakPoint sm>
+        <Row justify='between' align='center' css='text-align: center;' data-autopaint>
+          <BreakPoint sm defaultMatches={getDefaultBreakPoints('sm')}>
             {({matches}) => (
               <TransitionDrop fromLeft med delay={300} easing='heavyMove'>
                 {({className}) => (

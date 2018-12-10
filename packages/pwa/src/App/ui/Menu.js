@@ -48,7 +48,7 @@ function MenuGroup (props) {
         {props.title.toUpperCase()}
       </Type>
 
-      <Box>
+      <Box data-autopaint>
         {props.children}
       </Box>
     </Box>

@@ -1,4 +1,5 @@
 import createRenderer from '@inst-app/ssr/createRenderer'
+import {getDevice} from '@inst-app/ssr/utils'
 import serverless from 'serverless-http'
 import renderApp from './renderApp'
 
@@ -30,11 +31,13 @@ const PageCache = {}
 const middleware = [
   function overwriteSend (req, res, next) {
     var send = res.send
+    var device = getDevice(req.headers)
+    var cacheKey = `${getDevice(req.headers)}/${req.url}`
 
     res.send = function (string) {
       const body = string instanceof Buffer ? string.toString() : string
 
-      PageCache[req.url] = {
+      PageCache[req.cacheKey] = {
         body,
         statusCode: res.statusCode,
         headers: res.getHeaders()
@@ -46,7 +49,7 @@ const middleware = [
     next()
   },
   function handleRequest (req, res, next) {
-    let page = PageCache[req.url]
+    let page = PageCache[`${getDevice(req.headers)}/${req.url}`]
 
     if (page !== void 0) {
       res.set(page.headers)

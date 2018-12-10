@@ -125,6 +125,7 @@ injectGlobal`
     font-family: "CentimaMono";
     font-style: normal;
     font-weight: 700;
+    font-display: optional;
     src: url(${require('~/public/fonts/CentimaMono-Bold.woff2')}) format("woff2"),
          url(${require('~/public/fonts/CentimaMono-Bold.woff')}) format("woff");
   }
@@ -133,6 +134,7 @@ injectGlobal`
     font-family: "InterUI";
     font-style: normal;
     font-weight: 700;
+    font-display: optional;
     src: url(${require('~/public/fonts/Inter-UI-Black.woff2')}) format("woff2"),
          url(${require('~/public/fonts/Inter-UI-Black.woff')}) format("woff");
   }
@@ -141,10 +143,12 @@ injectGlobal`
     font-family: "InterUI";
     font-style: normal;
     font-weight: 400;
+    font-display: optional;
     src: url(${require('~/public/fonts/Inter-UI-Regular.woff2')}) format("woff2"),
          url(${require('~/public/fonts/Inter-UI-Regular.woff')}) format("woff");
   }
 `
+
 
 export default function App (props = emptyObj) {
   // creates the router context
@@ -155,9 +159,19 @@ export default function App (props = emptyObj) {
     history = browserHistory
   }
 
+  const curlsTheme = {grid: {}, ...theme}
+
+  if (props.userAgent) {
+    curlsTheme.grid.userAgent = props.userAgent
+  }
+
+  if (props.device) {
+    curlsTheme.grid.device = props.device
+  }
+
   return (
     <Lazy.Provider chunkCache={props.chunkCache}>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={curlsTheme}>
         <Router history={history} location={props.location} context={props.context}>
             <Route children={
               ({location}) => {
@@ -186,13 +200,8 @@ export default function App (props = emptyObj) {
                       />
                       <meta name="apple-mobile-web-app-title" content="Jared Lunde"/>
                       <meta name="theme-color" content={theme.colors.grey}/>
-
-                      {assets.path.startsWith('http') && (
-                        <>
-                          <link rel="dns-prefetch" href={assets.path}/>
-                          <link rel="preconnect" href={assets.path} crossorigin/>
-                        </>
-                      )}
+                      <link rel="dns-prefetch" href={assets.path}/>
+                      <link rel="preconnect" href={assets.path} crossOrigin/>
 
                       {Object.keys(faviconLinks).map(
                         rel => faviconLinks[rel].map(p => <link rel={rel} {...p}/>)
