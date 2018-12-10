@@ -1,5 +1,5 @@
 import {createRoute} from '@inst-app/router'
-import lazy from '@inst-app/ssr/lazy.macro'
+import lazy from 'react-broker/macro'
 import {resume} from '~/sitemap'
 import {AnimatedRoute, Loading} from './components'
 

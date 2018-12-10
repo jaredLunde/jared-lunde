@@ -1,10 +1,9 @@
 import React from 'react'
 import {Box, A, Type} from 'curls'
-import pure from 'react-purity'
 import {Icon, TransitionScale, TransitionDrop} from '@jaredlunde/curls-addons'
 
 
-const TransitionIcon = pure(
+const TransitionIcon = React.memo(
   ({delay, speed, href, title, ...props}) => (
     <TransitionDrop fromBottom delay={delay} easing='swiftMove' speed={speed}>
       {({className}) => (
@@ -60,6 +59,10 @@ export default function Menu (props) {
   return (
     <>
       <MenuGroup title='Recent Work' m='t0 b4'>
+        <MenuA href='https://BeStellar.co'>
+          Stellar
+        </MenuA>
+
         <MenuA href='https://airwell.app'>
           Airwell
         </MenuA>
@@ -78,8 +81,8 @@ export default function Menu (props) {
           curls
         </MenuA>
 
-        <MenuA href='https://github.com/jaredLunde/guff'>
-          guff
+        <MenuA href='https://github.com/jaredLunde/curls-native'>
+          curls-native
         </MenuA>
 
         <MenuA href='https://github.com/jaredLunde/cargo-orm'>

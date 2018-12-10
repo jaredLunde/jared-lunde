@@ -13,7 +13,9 @@ module.exports = {
   clientSrc: join('src/client'),
   serverSrc: join('src/server'),
 
-  inheritsSrc: join('../shared/src'),
+  inheritsSrc: [
+    join('../shared/src')
+  ],
 
   dist: join('dist'),
   modules: join('node_modules'),

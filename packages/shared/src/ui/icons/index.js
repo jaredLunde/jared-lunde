@@ -1,5 +1,5 @@
 import React from 'react'
-import lazy from '@inst-app/ssr/lazy.macro'
+import lazy from 'react-broker/macro'
 import {Box} from 'curls'
 
 

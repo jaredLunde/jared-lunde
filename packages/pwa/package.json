@@ -4,7 +4,8 @@
   "main": "src/index.js",
   "license": "MIT",
   "devDependencies": {
-    "@inst-app/serverless-pwa": "^1.0.4"
+    "@inst-app/serverless-pwa": "^1.0.4",
+    "terser-webpack-plugin": "^1.1.0"
   },
   "dependencies": {
     "@inst-app/static-pwa": "^1.0.3",
@@ -15,7 +16,8 @@
     "@render-props/size-observer": "^0.1.12",
     "express": "^4.16.3",
     "react-portalize": "^0.1.9",
-    "react-router-transition": "^1.2.1"
+    "react-router-transition": "^1.2.1",
+    "serverless-plugin-lambda-warmup": "^1.0.1"
   },
   "inst": {
     "type": "pwa",
@@ -30,16 +32,15 @@
   },
   "sideEffects": false,
   "scripts": {
+    "analyze": "webpack-bundle-analyzer dist/staging/client/full-stats.json",
+    "analyze:prod": "webpack-bundle-analyzer dist/production/client/full-stats.json",
     "edit": "atom ./",
-    "start": "inst start",
-    "start-ssr": "inst start --ssr",
+    "start": "inst start --ssr",
     "deploy": "inst deploy staging",
     "deploy:prod": "inst deploy production",
     "deploy-client": "inst deploy-client staging",
     "deploy-client:prod": "inst deploy-client production",
     "deploy-server": "inst deploy-server staging",
-    "deploy-server:prod": "inst deploy-server production",
-    "deploy-init": "inst deploy staging --init",
-    "deploy-init:prod": "inst deploy production --init"
+    "deploy-server:prod": "inst deploy-server production"
   }
 }

@@ -1,9 +1,9 @@
+import React from 'react'
 import {Icon} from '@jaredlunde/curls-addons'
-import pure from 'react-purity'
 import Button from './Button'
 
 
-export default pure(
+export default React.memo(
   function IconButton ({name, size, color, ...props}) {
     return Button({
       bg: 'transparent',

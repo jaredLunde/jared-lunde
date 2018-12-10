@@ -1,0 +1,22 @@
+{
+  "name": "Jared Lunde",
+  "short_name": "Jared Lunde",
+  "start_url": "https://jaredlunde.com/",
+  "display": "standalone",
+  "background_color": "#0A0F0F",
+  "theme_color": "#84A5A6",
+  "description": "",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://cdn.jaredlunde.com/images/manifest-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://cdn.jaredlunde.com/images/manifest-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

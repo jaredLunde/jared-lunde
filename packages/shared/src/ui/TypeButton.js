@@ -1,6 +1,5 @@
 import React from 'react'
 import {Type} from 'curls'
-import pure from 'react-purity'
 import Button from './Button'
 
 

@@ -1,6 +1,6 @@
 const instWebpack = require('@inst-app/webpack')
 const webpack = require('webpack')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 const defaults = require('./defaults')
 let envDefaults = {}
 let createConfig = instWebpack.createDevelopment
@@ -21,9 +21,10 @@ if (process.env.NODE_ENV === 'production') {
     optimization: {
       minimize: true,
       minimizer: [
-        new UglifyJsPlugin({
+        new TerserPlugin({
           cache: true,
-          uglifyOptions: {
+          parallel: true,
+          terserOptions: {
             compress: {
               passes: 2,
               keep_infinity: true,
@@ -48,17 +49,17 @@ if (process.env.NODE_ENV === 'production') {
 
       splitChunks: {
         chunks: 'all',
-        minSize: 0,
-        maxAsyncRequests: Infinity,
-        maxInitialRequests: Infinity,
+        minSize: 24 * 1000,
+        maxAsyncRequests: 3,
+        maxInitialRequests: 3,
         name: true,
         cacheGroups: {
           default: {
             chunks: 'async',
             minSize: 24 * 1000,
             minChunks: 1,
-            maxAsyncRequests: 8,
-            maxInitialRequests: 8,
+            maxAsyncRequests: 3,
+            maxInitialRequests: 3,
             priority: -20,
             reuseExistingChunk: true,
           },
@@ -68,8 +69,8 @@ if (process.env.NODE_ENV === 'production') {
             chunks: 'initial',
             minSize: 0,
             minChunks: 1,
-            maxAsyncRequests: 16,
-            maxInitialRequests: 16,
+            maxAsyncRequests: 2,
+            maxInitialRequests: 2,
             priority: -1,
             reuseExistingChunk: true,
             test: function(module) {

@@ -1,8 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import {BreakPoint, Type, Row, H1, H2, Box, A, Link} from 'curls'
-import pure from 'react-purity'
-import Hover from '@render-props/hover'
+import {BreakPoint, Row, H1, H2, Box, Link} from 'curls'
 import {Icon} from '@jaredlunde/curls-addons'
 import {ResumePage} from '~/@routes/Resume'
 import {resume} from '~/sitemap'
@@ -97,7 +95,7 @@ export default class Home extends React.PureComponent {
                   w='100%'
                   p='3'
                   align='center'
-                  css='max-width: 420px;'
+                  maxW='456'
                   z={1000}
                 >
                   <H2

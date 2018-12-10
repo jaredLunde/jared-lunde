@@ -13,7 +13,7 @@ module.exports = instWebpack.createDevelopment({
   name: `${pkgJSON.name}-development`,
   rootImportSrc: appPaths.appSrc,
 
-  entry: [path.join(appPaths.clientSrc, 'render.development')],
+  entry: [path.join(appPaths.clientSrc, 'render')],
 
   output: {
     path: path.join(appPaths.dist, 'development'),
@@ -33,9 +33,10 @@ module.exports = instWebpack.createDevelopment({
       maxChunks: 1
     }),
     new webpack.DefinePlugin({
-      __PLATFORM__: JSON.stringify('server'),
+      __SERVER__: JSON.stringify(false),
+      __CLIENT__: JSON.stringify(true),
       __STAGE__: JSON.stringify('development'),
-      __DEV__: JSON.stringify(process.env.NODE_ENV === 'development')
+      __DEV__: JSON.stringify(isDev)
     })
   ]
 })

@@ -1,5 +1,16 @@
+const path = require('path')
 const appPaths = require('./paths')
 
+
+function createAliases (inherits) {
+  const aliases = {}
+
+  for (let inherit of inherits) {
+    aliases[`${path.basename(path.dirname(inherit))}`] = inherit
+  }
+
+  return aliases
+}
 
 module.exports = {
   resolveLoader: {
@@ -8,16 +19,14 @@ module.exports = {
 
   resolve: {
     modules: [appPaths.modules],
-
-    alias: {
-      shared: appPaths.inheritsSrc,
-    }
+    
+    alias: createAliases(appPaths.inheritsSrc)
   },
   
   inst: {
     include: [
       appPaths.appSrc,
-      appPaths.inheritsSrc,
+      ...appPaths.inheritsSrc,
       appPaths.clientSrc,
       appPaths.serverSrc,
     ]

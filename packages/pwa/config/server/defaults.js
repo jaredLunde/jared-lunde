@@ -5,6 +5,8 @@ const defaults = require('../webpack.defaults')
 const appPaths = require('../paths')
 
 
+const isDev = process.env.NODE_ENV === 'development'
+
 module.exports = {
   ...defaults,
 
@@ -13,7 +15,7 @@ module.exports = {
   rootImportSrc: appPaths.appSrc,
 
   entry: {
-    m: [path.join(appPaths.serverSrc, `render.${process.env.STAGE}.js`)]
+    m: [path.join(appPaths.serverSrc, 'render.js')]
   },
 
   output: {
@@ -41,9 +43,10 @@ module.exports = {
   plugins: [
     new webpack.optimize.LimitChunkCountPlugin({maxChunks: 1}),
     new webpack.DefinePlugin({
-      __PLATFORM__: '"server"',
-      __STAGE__: JSON.stringify(process.env.STAGE),
-      __DEV__: JSON.stringify(process.env.NODE_ENV === 'development')
+      __SERVER__: JSON.stringify(true),
+      __CLIENT__: JSON.stringify(false),
+      __STAGE__: JSON.stringify(process.env.STAGE || 'development'),
+      __DEV__: JSON.stringify(isDev)
     })
   ],
 

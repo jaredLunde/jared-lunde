@@ -1,6 +1,6 @@
 stage: 'staging'
 main:
-  memorySize: 1536
+  memorySize: 768
   tags:
     stack: staging
 customDomain:

@@ -83,7 +83,7 @@ class Header extends React.PureComponent {
               ov='hidden'
               data-strict
             >
-              <img src={profilePicture} width={48}/>
+              <img src={profilePicture} width={48} alt='A picture of Jared Lunde'/>
             </Box>
           </Link>
 

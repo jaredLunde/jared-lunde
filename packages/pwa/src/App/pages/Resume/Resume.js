@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import Paragraphs from '@render-props/paragraphs'
-import {BreakPoint, A, Row, Box, Card, Type, H3, H2, P} from 'curls'
+import {A, Row, Box, Type, H3, H2, P} from 'curls'
 import {Header, Content, Cover} from '~/ui'
 import {github} from '~/sitemap'
 
@@ -86,6 +86,11 @@ export default function Resume (prop) {
     <Box bg='lightestGrey' css='min-height: 100vh;'>
       <Helmet>
         <title>Resume - Jared Lunde</title>
+        <meta
+          name='description'
+          content={`I am self-motivated and take pride in everything I write. I strive to create tools that make development easy, deployment reliable, and iterating quick.`}
+        />
+        <link rel='canonical' href='https://jaredlunde.com/resume'/>
       </Helmet>
 
       <Header/>
@@ -107,7 +112,7 @@ export default function Resume (prop) {
           </Paragraphs>
         </Section>
 
-        <Section title='Skills'>
+        <Section title='Skills' m='b4'>
           <BlurbGroup>
             <Blurb title='Grit'>
               Self-employed for entire professional career;
@@ -127,7 +132,7 @@ export default function Resume (prop) {
           </BlurbGroup>
         </Section>
 
-        <Section title='Technical Competencies'>
+        <Section title='Technical Competencies' m='b4'>
           <BlurbGroup>
             <Blurb title='Languages'>
               Javascript/NodeJS, Python 3, HTML, CSS, SASS, SQL, Bash
@@ -139,7 +144,7 @@ export default function Resume (prop) {
             </Blurb>
 
             <Blurb title='Certifications'>
-              AWS Developer (Associate); AWS SysOps Administrator (Associate)
+              AWS Developer (Associate)
             </Blurb>
           </BlurbGroup>
         </Section>
@@ -147,7 +152,7 @@ export default function Resume (prop) {
         <Section p='r2' title={
           <Box nodeType='span' d='block' fm='b2'>Open Source</Box>
         }>
-          <Row wrap m='t1 b4' justify='between'>
+          <Row wrap m='t1' justify='between'>
             <GithubBox pkg='render-props' tags={['React', 'Javascript']}>
               Easy-to-use React state containers utilizing the render
               props pattern
@@ -166,9 +171,8 @@ export default function Resume (prop) {
               written using emotion.js
             </GithubBox>
 
-            <GithubBox pkg='guff' tags={['Javascript', 'PostgreSQL']}>
-              A no-nonsense extension of Knex and Objection.js for use with
-              PostgreSQL clients
+            <GithubBox pkg='curls-native' tags={['React Native', 'Javascript']}>
+              A React Native implementation of the UI component framework Curls.
             </GithubBox>
 
             <GithubBox pkg='cargo-orm' tags={['Python', 'PostgreSQL']}>
@@ -179,19 +183,7 @@ export default function Resume (prop) {
             <GithubBox pkg='redis_structures' tags={['Python', 'Redis']}>
               Pythonic data structures backed by Redis
             </GithubBox>
-
-            <GithubBox
-              pkg='jared-lunde'
-              tags={['Javascript', 'Webpack', 'CSS', 'AWS']}
-            >
-              Check out how I develop real world applications by taking a look
-              at the source of this website!
-            </GithubBox>
           </Row>
-        </Section>
-
-        <Section title='Employment History'>
-
         </Section>
       </Content>
     </Box>
