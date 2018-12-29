@@ -1,15 +1,14 @@
 const path = require('path')
 const webpack = require('webpack')
 const nodeExternals = require('webpack-node-externals')
+const merge = require('webpack-merge')
 const defaults = require('../webpack.defaults')
 const appPaths = require('../paths')
 
 
 const isDev = process.env.NODE_ENV === 'development'
 
-module.exports = {
-  ...defaults,
-
+module.exports = merge(defaults, {
   name: 'server',
   target: 'lambda',
   rootImportSrc: appPaths.appSrc,
@@ -45,10 +44,10 @@ module.exports = {
     new webpack.DefinePlugin({
       __SERVER__: JSON.stringify(true),
       __CLIENT__: JSON.stringify(false),
-      __STAGE__: JSON.stringify(process.env.STAGE || 'development'),
+      __STAGE__: JSON.stringify(process.env.STAGE),
       __DEV__: JSON.stringify(isDev)
     })
   ],
 
   optimization: {minimize: false}
-}
+})

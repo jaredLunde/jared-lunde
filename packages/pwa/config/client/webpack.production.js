@@ -10,16 +10,13 @@ module.exports = instWebpack.createProduction(
     module: {
       rules: [
         {
-          test: /@jaredlunde|react-router|polished|@render-props|history/,
+          test: /@jaredlunde|react-router|react-broker|react-helmet|polished|@render-props|history/,
           sideEffects: false
         }
       ]
     },
+
     plugins: [
-      new webpack.optimize.AggressiveSplittingPlugin({
-        minSize: 24000,
-        maxSize: 96000
-      }),
       new webpack.LoaderOptionsPlugin({minimize: false, debug: false}),
     ],
 
@@ -42,6 +39,7 @@ module.exports = instWebpack.createProduction(
               unsafe_regexp: true,
               unsafe_undefined: true,
               warnings: false,
+              ecma: 5,
               dead_code: true
             },
             output: {
@@ -53,33 +51,27 @@ module.exports = instWebpack.createProduction(
       ],
 
       splitChunks: {
-        chunks: 'all',
-        minSize: 24 * 1000,
-        maxAsyncRequests: 3,
-        maxInitialRequests: 3,
-        name: true,
         cacheGroups: {
           default: {
-            chunks: 'async',
-            minSize: 24 * 1000,
+            name: 'default',
+            chunks: 'initial',
+            minSize: 48 * 1000,
+            maxSize: 128 * 1000,
             minChunks: 1,
-            maxAsyncRequests: 4,
-            maxInitialRequests: 4,
-            priority: -20,
+            maxAsyncRequests: 6,
+            maxInitialRequests: 6,
+            priority: -10,
             reuseExistingChunk: true,
           },
 
-          pages: {
-            name: 'pages',
-            chunks: 'initial',
-            minSize: 0,
-            minChunks: 1,
-            maxAsyncRequests: 2,
-            maxInitialRequests: 2,
-            priority: -1,
+          icons: {
+            name: 'icons',
+            chunks: 'all',
+            enforce: true,
+            priority: 10,
             reuseExistingChunk: true,
             test: function(module) {
-              return module.resource && module.resource.match(/\/pages\//)
+              return module.resource && module.resource.includes('\/icons\/')
             },
           }
         },

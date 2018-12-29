@@ -1,6 +1,7 @@
-import {__STAGE__} from 'shared/config'
 import paths from '../../../config/paths'
-import resolveURL from 'url-resolve-browser'
+const resolveURL = typeof document !== 'undefined'
+  ? require('resolve-url')
+  : require('url').resolve
 
 
 let resolver = resolveURL
@@ -9,12 +10,11 @@ if (__STAGE__ === 'development') {
   resolver = require('path').join
 }
 
-
 export let path = paths.publicPath.development
 
 switch (__STAGE__) {
   case 'staging':    path = paths.publicPath.staging
-  break;
+    break;
   case 'production': path = paths.publicPath.production
 }
 

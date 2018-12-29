@@ -11,10 +11,6 @@ if (process.env.NODE_ENV === 'production') {
   envDefaults = {
     plugins: [
       ...defaults.plugins,
-      new webpack.optimize.AggressiveSplittingPlugin({
-        minSize: 24000,
-        maxSize: 96000
-      }),
       new webpack.LoaderOptionsPlugin({minimize: false, debug: false}),
     ],
 
@@ -30,10 +26,12 @@ if (process.env.NODE_ENV === 'production') {
               keep_infinity: true,
               drop_console: true,
               pure_getters: 'strict',
+              toplevel: true,
               unsafe: true,
               unsafe_comps: true,
               unsafe_Function: true,
               unsafe_math: true,
+              unsafe_proto: true,
               unsafe_regexp: true,
               unsafe_undefined: true,
               warnings: false,
@@ -48,33 +46,27 @@ if (process.env.NODE_ENV === 'production') {
       ],
 
       splitChunks: {
-        chunks: 'all',
-        minSize: 24 * 1000,
-        maxAsyncRequests: 3,
-        maxInitialRequests: 3,
-        name: true,
         cacheGroups: {
           default: {
-            chunks: 'async',
-            minSize: 24 * 1000,
+            name: 'default',
+            chunks: 'initial',
+            minSize: 48 * 1000,
+            maxSize: 128 * 1000,
             minChunks: 1,
-            maxAsyncRequests: 3,
-            maxInitialRequests: 3,
-            priority: -20,
+            maxAsyncRequests: 6,
+            maxInitialRequests: 6,
+            priority: -10,
             reuseExistingChunk: true,
           },
 
-          pages: {
-            name: 'pages',
-            chunks: 'initial',
-            minSize: 0,
-            minChunks: 1,
-            maxAsyncRequests: 2,
-            maxInitialRequests: 2,
-            priority: -1,
+          icons: {
+            name: 'icons',
+            chunks: 'all',
+            enforce: true,
+            priority: 10,
             reuseExistingChunk: true,
             test: function(module) {
-              return module.resource && module.resource.match(/\/pages\//)
+              return module.resource && module.resource.includes('\/icons\/')
             },
           }
         },

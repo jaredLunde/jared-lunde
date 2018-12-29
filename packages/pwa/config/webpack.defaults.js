@@ -29,6 +29,7 @@ module.exports = {
       ...appPaths.inheritsSrc,
       appPaths.clientSrc,
       appPaths.serverSrc,
+      appPaths.join('config')
     ]
   },
 }

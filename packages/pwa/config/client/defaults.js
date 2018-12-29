@@ -1,5 +1,6 @@
 const webpack = require('webpack')
 const path = require('path')
+const merge = require('webpack-merge')
 const appPaths = require('../paths')
 const pkgJSON = require('../../package.json')
 const defaults = require('../webpack.defaults')
@@ -7,9 +8,7 @@ const defaults = require('../webpack.defaults')
 
 const isDev = process.env.NODE_ENV === 'development'
 
-module.exports = {
-  ...defaults,
-
+module.exports = merge(defaults, {
   name: 'client',
 
   rootImportSrc: appPaths.appSrc,
@@ -30,4 +29,4 @@ module.exports = {
       __DEV__: JSON.stringify(isDev)
     })
   ]
-}
+})
