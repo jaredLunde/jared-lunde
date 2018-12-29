@@ -36,6 +36,7 @@
     "analyze:prod": "webpack-bundle-analyzer dist/production/client/full-stats.json",
     "edit": "atom ./",
     "start": "inst start --ssr",
+    "start:prod": "inst start --ssr -p",
     "deploy": "inst deploy staging",
     "deploy:prod": "inst deploy production",
     "deploy-client": "inst deploy-client staging",
