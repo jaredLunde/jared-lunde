@@ -17,7 +17,8 @@
   "workspaces": [
     "packages/public",
     "packages/shared",
-    "packages/pwa"
+    "packages/pwa",
+    "packages/recipes"
   ],
   "scripts": {
     "create-api": "inst create-api --cwd packages",
@@ -26,7 +27,8 @@
     "create-shared": "inst create-shared --cwd packages",
     "edit": "atom ./",
     "shared": "INIT_CWD=packages/shared yarn --cwd=packages/shared",
-    "pwa": "INIT_CWD=packages/pwa yarn --cwd=packages/pwa"
+    "pwa": "INIT_CWD=packages/pwa yarn --cwd=packages/pwa",
+    "recipes": "INIT_CWD=packages/recipes yarn --cwd=packages/recipes"
   },
   "__path": "/Users/jaredlunde/pkg/jared-lunde/package.json"
 }

@@ -1,0 +1,10 @@
+stage: 'staging'
+main:
+  memorySize: 768
+  tags:
+    stack: staging
+customDomain:
+  domainName: staging-recipes.jaredlunde.com
+  createRoute53Record: true
+webpack:
+  config: 'config/server/webpack.staging.js'

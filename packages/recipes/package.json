@@ -1,0 +1,49 @@
+{
+  "name": "recipes",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "inst": {
+    "type": "pwa",
+    "awsProfile": {
+      "development": "",
+      "staging": "instaspace-dev",
+      "production": "instaspace-prod"
+    },
+    "s3": {
+      "development": "",
+      "staging": "lunde-staging-public",
+      "production": "lunde-public"
+    }
+  },
+  "devDependencies": {
+    "@inst-app/serverless-pwa": "^1.0.10"
+  },
+  "dependencies": {
+    "@inst-app/static-pwa": "^1.0.12",
+    "@jaredlunde/react-with-sticky": "^1.0.6",
+    "@mdx-js/loader": "^0.16.6",
+    "@mdx-js/mdx": "^0.16.6",
+    "@stellar-apps/buttons": "^1.0.2",
+    "@stellar-apps/hamburger-menu": "^1.0.3",
+    "@stellar-apps/made-by-stellar": "^1.0.0",
+    "@stellar-apps/viewport-hero": "^1.0.0",
+    "lru-memoize-map": "^0.2.2",
+    "react-broker": "^1.0.12-alpha.0",
+    "react-pose": "^4.0.4"
+  },
+  "scripts": {
+    "analyze": "webpack-bundle-analyzer dist/staging/client/full-stats.json",
+    "analyze:prod": "webpack-bundle-analyzer dist/production/client/full-stats.json",
+    "edit": "atom ./",
+    "start": "inst start --ssr",
+    "start:prod": "inst start --ssr -p",
+    "start:fast": "inst start",
+    "deploy": "inst deploy staging",
+    "deploy:prod": "inst deploy production",
+    "deploy-client": "inst deploy-client staging",
+    "deploy-client:prod": "inst deploy-client production",
+    "deploy-server": "inst deploy-server staging",
+    "deploy-server:prod": "inst deploy-server production"
+  }
+}

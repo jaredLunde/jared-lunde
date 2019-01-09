@@ -1,0 +1,7 @@
+node_modules/
+commonjs/
+es/
+dist/
+.DS_Store
+.serverless
+*.log

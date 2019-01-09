@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {Router} from '@inst-app/router'
 import createHistory from 'history/createBrowserHistory'
-import Broker from 'react-broker'
 import App from '../App'
 
 
@@ -10,9 +9,7 @@ const history = createHistory()
 const root = document.getElementById('⚛️')
 
 async function render (App) {
-  const app = <App router={Router} history={history}/>
-  await Broker.loadAll(app)
-  return ReactDOM.render(app, root)
+  return ReactDOM.render(<App router={Router} history={history}/>, root)
 }
 
 if (__DEV__) {
