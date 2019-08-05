@@ -22,20 +22,14 @@ const RecentProject = ({icon, href, name, children}) => (
       <Box
         as='span'
         flex
-        w='148@tablet 100%@phone'
+        w='148@tablet auto@phone'
         minW='148@tablet 100%@phone'
+        h='240@phone auto@tablet'
         ov='hidden'
         justify='center'
-      >
-        <Box
-          as='img'
-          src={icon}
-          d='block'
-          h='200@tablet auto@phone'
-          w='100%@phone auto@tablet'
-          aria-hidden
-        />
-      </Box>
+        css={css`background: url(${icon}); background-size: cover; background-position: center;`}
+        aria-hidden
+      />
       <Box as='span' p='3' grow>
         <Text as='span' kind='h3' d='block'>{name}</Text>
         <Text size='xs'>{children}</Text>
