@@ -1,5 +1,0 @@
-export * from 'shared/ui'
-export Header from './Header'
-export Footer from './Footer'
-export Menu from './Menu'
-export SideBar from './SideBar'

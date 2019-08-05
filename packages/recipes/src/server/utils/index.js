@@ -1,1 +1,0 @@
-export minifyHTML from './minifyHTML'

@@ -1,6 +1,0 @@
-export box from './box'
-export button from './button'
-export colors from './colors'
-export icon from './icon'
-export type from './type'
-export typeFaces from './typeFaces'

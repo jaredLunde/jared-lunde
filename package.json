@@ -1,36 +1,18 @@
 {
-  "name": "jared-lunde-monorepo",
+  "name": "jared-lunde",
   "version": "1.0.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jaredLunde/jared-lunde"
-  },
+  "main": "index.js",
+  "author": "Jared Lunde <jared@BeStellar.co> (https://BeStellar.co)",
+  "license": "MIT",
   "inst": {
     "root": true
   },
-  "author": "Jared Lunde",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jaredLunde/jared-lunde/issues"
-  },
   "private": true,
   "workspaces": [
-    "packages/public",
-    "packages/shared",
-    "packages/pwa",
-    "packages/recipes",
-    "packages/books"
+    "packages/www"
   ],
   "scripts": {
-    "create-api": "inst create-api --cwd packages",
-    "create-native": "inst create-native --cwd packages",
-    "create-pwa": "inst create-pwa --cwd packages",
-    "create-shared": "inst create-shared --cwd packages",
-    "edit": "atom ./",
-    "shared": "INIT_CWD=packages/shared yarn --cwd=packages/shared",
-    "pwa": "INIT_CWD=packages/pwa yarn --cwd=packages/pwa",
-    "recipes": "INIT_CWD=packages/recipes yarn --cwd=packages/recipes",
-    "books": "INIT_CWD=packages/books yarn --cwd=packages/books"
-  },
-  "__path": "/Users/jaredlunde/pkg/jared-lunde/package.json"
+    "inst": "inst add --cwd packages",
+    "www": "INIT_CWD=packages/www yarn --cwd=packages/www"
+  }
 }

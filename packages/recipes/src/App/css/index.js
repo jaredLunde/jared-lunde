@@ -1,1 +1,0 @@
-export accel from './accel'
