@@ -21,12 +21,9 @@ const RecentProject = ({icon, href, name, children}) => (
     <Box as='span' kind='card' row='@tablet' p='0' h='100%'>
       <Box
         as='span'
-        flex
         w='148@tablet auto@phone'
         minW='148@tablet 100%@phone'
         h='240@phone auto@tablet'
-        ov='hidden'
-        justify='center'
         css={css`background: url(${icon}); background-size: cover; background-position: center;`}
         aria-hidden
       />
