@@ -9,7 +9,7 @@ your local machine, utilize the scripts below.
 
 ## Scripts
 ### yarn install
-Installs all `packages` in this monorepo
+Installs all dependencies in `packages` for this monorepo
 
 ### yarn www start
 Starts a dev server in `development` mode
