@@ -1056,9 +1056,9 @@
   integrity sha512-lm1LfP03w8rS349oc5sYYiuXLJTp96hw5yYAT6c8BpgOXg5nd9Vj1vh4w20TMz418wJh1v5dcPEoTLwE+hg0Ew==
 
 "@react-hook/throttle@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@react-hook/throttle/-/throttle-1.0.0.tgz#4f923279357ed0977b4ef004b62a4a01b16327c5"
-  integrity sha512-xmDDBg4BkRe74hkKSPWval0negM81ulmCr0SbnMb/Xgkuro9t8JejX4Up3RLMNXcAJ4Jvd5+BLsKjHn4YjSKuQ==
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@react-hook/throttle/-/throttle-1.0.1.tgz#53d6f4e28b4e3630092ac278991744be26704871"
+  integrity sha512-1TsRQ/uw7WUj8+ITHbD+FlesbfxoSLUypCUzYkOttBXHbNSRNx0DnSHEPDu+IS7LroxdEt451YLybgvpy8X0qg==
   dependencies:
     "@essentials/request-timeout" "^1.0.0"
 
@@ -1168,9 +1168,9 @@
     semver "^6.1.1"
 
 "@serverless/enterprise-plugin@^1.3.1":
-  version "1.3.7"
-  resolved "https://registry.yarnpkg.com/@serverless/enterprise-plugin/-/enterprise-plugin-1.3.7.tgz#a99e182b668db09b6b2b69ebbd79b802f0913793"
-  integrity sha512-439Q1EPzDMYnzhzJrO681z8/wmyy59+bFPbPuuYBVmop7NxzDPj+yDN9MG3qtNhG3YAStn4sTIFyBZ/PUf5gCQ==
+  version "1.3.8"
+  resolved "https://registry.yarnpkg.com/@serverless/enterprise-plugin/-/enterprise-plugin-1.3.8.tgz#21f4f1d52c438e0c7ddc61de16d858b58319da99"
+  integrity sha512-r2rTxVZZQB4eOcq2Toe89WYY2vHkyPiLWXGCfzmZcxRYe+Triv1/E1c7A6JE4sGIimLKONDVN6OPECmHanYlgQ==
   dependencies:
     "@serverless/event-mocks" "^1.1.1"
     "@serverless/platform-sdk" "^2.0.3"
@@ -2018,9 +2018,9 @@ author-regex@^0.2.1:
   integrity sha1-i976rGBlqTF5m+wH7u9RuUDgjzw=
 
 aws-sdk@^2.177.0, aws-sdk@^2.395.0, aws-sdk@^2.496.0:
-  version "2.503.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.503.0.tgz#983b8c03aa919060a81127cb9d94fbb1667f4cf2"
-  integrity sha512-DPwRxhPYCGNvKL9rUhpAoOVpMRyISbVMlXykLQknYo7wyOI+jYcyA7t8H7IFPAqj4ZG+R+Au9tO/KT4im+2gbg==
+  version "2.504.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.504.0.tgz#d7111b3f5117548935d68c717d72bbf57a9362f9"
+  integrity sha512-azOX54oovJv0zWzO23fBgIprwsvx8KUuMR+cAUAOx23D8LJ5S+sl3UYS9Q1X4qF/blBTa4+ZNawZDV0N1HiQmw==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -2143,9 +2143,9 @@ base64-arraybuffer@0.1.5:
   integrity sha1-c5JncZI7Whl0etZmqlzUv5xunOg=
 
 base64-js@^1.0.2:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.3.0.tgz#cab1e6118f051095e58b5281aea8c1cd22bfc0e3"
-  integrity sha512-ccav/yGvoa80BQDljCxsmmQ3Xvx60/UpBIij5QN21W3wBi/hhIC9OoO+KLpu9IJTS9j4DRVJ3aDDF9cMSoa2lw==
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.3.1.tgz#58ece8cb75dd07e71ed08c736abc5fac4dbf8df1"
+  integrity sha512-mLQ4i2QO1ytvGWFWmcngKO//JXAQueZvwEKtjgQFM4jIK0kU+ytMfplL8j+n5mspOfjHwoAg+9yhb7BwAHm36g==
 
 base64id@1.0.0:
   version "1.0.0"
@@ -2663,9 +2663,9 @@ cancelable-promise@^2.4.1:
   integrity sha512-3CdXq0SsjHMt9rfCfJLl5EG/zJQM2EaH5DrISRqFVF8C9e4wj7U2YABaM5c8Pv+/PECsm/oUEb+kC6YBZ0o2uA==
 
 caniuse-lite@^1.0.30000984:
-  version "1.0.30000988"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000988.tgz#742f35ec1b8b75b9628d705d7652eea1fef983db"
-  integrity sha512-lPj3T8poYrRc/bniW5SQPND3GRtSrQdUM/R4mCYTbZxyi3jQiggLvZH4+BYUuX0t4TXjU+vMM7KFDQg+rSzZUQ==
+  version "1.0.30000989"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000989.tgz#b9193e293ccf7e4426c5245134b8f2a56c0ac4b9"
+  integrity sha512-vrMcvSuMz16YY6GSVZ0dWDTJP8jqk3iFQ/Aq5iqblPwxSVVZI+zxDyTX0VPqtQsDnfdrBDcsmhgTEOh5R8Lbpw==
 
 capture-stack-trace@^1.0.0:
   version "1.0.1"

@@ -115,7 +115,7 @@ const Experience = ({
 export const OpenSource = props => (
   <Box kind='row' bg='white' pos='relative' p='y4@phone y5@desktop'>
     <Content kind='section' p='x3'>
-      <Text kind='h2' center m='b4@desktop b3@phone' aria-title='Open source libraries'>
+      <Text kind='h2' center m='b4@desktop b3@phone' aria-label='Open source libraries'>
         Open source
       </Text>
 
