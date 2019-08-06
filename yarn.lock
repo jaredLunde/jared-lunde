@@ -1043,10 +1043,10 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
-"@react-hook/debounce@^0.1.4":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@react-hook/debounce/-/debounce-0.1.6.tgz#16944942802ce448c64a10bc0c9fa4a4b79c5c67"
-  integrity sha512-mNj1QZI/o894Jy3S3Dp5mgJinKTYcNnDeN/5/khDFf5aEhNVN3YNPJa4302+O1bS/VrdhB0m905OG6BmMCrmjw==
+"@react-hook/debounce@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@react-hook/debounce/-/debounce-1.0.2.tgz#e1bddb153fcc3d31d038afb6abb6fbebac071dba"
+  integrity sha512-66tD3eb7Kd+/3qrhyzzUC2NKm1fq9k4LJalbDjMJnRvLQw8MgE7ZMyYAS/y9df3O4Q8emO8ekV3h7mYgBTfkjQ==
   dependencies:
     "@essentials/request-timeout" "^1.0.0"
 
@@ -1055,7 +1055,7 @@
   resolved "https://registry.yarnpkg.com/@react-hook/server-promises/-/server-promises-1.0.2.tgz#518668a89602ea3858db5b4d6fd8249d08a9d554"
   integrity sha512-lm1LfP03w8rS349oc5sYYiuXLJTp96hw5yYAT6c8BpgOXg5nd9Vj1vh4w20TMz418wJh1v5dcPEoTLwE+hg0Ew==
 
-"@react-hook/throttle@^1.0.0":
+"@react-hook/throttle@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@react-hook/throttle/-/throttle-1.0.1.tgz#53d6f4e28b4e3630092ac278991744be26704871"
   integrity sha512-1TsRQ/uw7WUj8+ITHbD+FlesbfxoSLUypCUzYkOttBXHbNSRNx0DnSHEPDu+IS7LroxdEt451YLybgvpy8X0qg==
@@ -1068,20 +1068,20 @@
   integrity sha512-EJO2tl70BsNBEaOCTgBkY/cbb7D2cccFRjwHAZdG8hQkNVgHAewgDDB4hYexNtC/AnGLZ2NKzjXPSQPkXBqSsw==
 
 "@react-hook/window-scroll@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@react-hook/window-scroll/-/window-scroll-1.0.0.tgz#b2b91edc1b045c0725e631c7b1e805f2f82b4792"
-  integrity sha512-0MGj66Eo8dm6AsypDcLt/Wws0nw9JE8RkTYmQBwPmYInOVxrWlhsc40gtksyQ4K/JUyyklJ4Y/+6cC/+9PXfhg==
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@react-hook/window-scroll/-/window-scroll-1.0.1.tgz#4f111e268fc0b135009d944cc3ace382465ce831"
+  integrity sha512-ocsxibFsHXPW40BbryBVa+twFx6/6Tac8GFWB4ZhP/kg/gz06XOg3gHotdFQq1Ar8QHD3PYYjrBEr+QEdZaLOg==
   dependencies:
-    "@react-hook/throttle" "^1.0.0"
+    "@react-hook/throttle" "^1.0.1"
     empty "^0.10.1"
 
 "@react-hook/window-size@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@react-hook/window-size/-/window-size-1.0.1.tgz#7ea7c22c386e13b0798890e8a6282e7b0ee60a89"
-  integrity sha512-//Ah1CQuyvRuZF7V8FiLcYwpXgLzpvy6U09JNOAp8JBAR/K85wazRQYRQ/RfyyOuURbK8ZU8/Ron/2txXn3H0w==
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@react-hook/window-size/-/window-size-1.0.2.tgz#176acdabedb1f17d03c1c72400c980db2f824b88"
+  integrity sha512-+zN66wGkhBz4ifYmyda7IDrKsnqcJkLeuWDhVsmSx8H+Hhewy+A2XP7xD9MmPHsGxIkcdf8FWEVp8xy0ktDDLw==
   dependencies:
-    "@react-hook/debounce" "^0.1.4"
-    "@react-hook/throttle" "^1.0.0"
+    "@react-hook/debounce" "^1.0.2"
+    "@react-hook/throttle" "^1.0.1"
     empty "^0.10.1"
 
 "@render-props/events@^0.1.2":
