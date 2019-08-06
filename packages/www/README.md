@@ -3,7 +3,7 @@ This is the package for the www subdomain of `jaredlunde.com`
 
 ### Cloning the repository
 1. `git clone https://github.com/jaredLunde/jared-lunde.git`
-2. `cd jared-lunde/packages`
+2. `cd jared-lunde/packages/www`
 
 ## Scripts
 ### yarn install
