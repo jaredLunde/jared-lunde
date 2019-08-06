@@ -99,6 +99,7 @@ export const colors = {
   accentText: defaultColors.grey,
   primary: defaultColors.red,
   translucentDark: 'rgba(40, 36, 42, 0.9)',
+  dark: 'rgba(40, 36, 42, 1)',
   primaryLink: defaultColors.red
 }
 

@@ -38,7 +38,7 @@ const Project = ({name, skills, children}) => (
   <Box as='li' grow d='inline' p='1' basis='[calc(33.333% - 16px)]@tablet 100%@phone'>
     <Box as='a' href={urls.gitHubRepo(name)}>
       <Box as='span' d='block' grow minW='240' m='b1' br='1' ov='hidden' h='100%'>
-        <Box as='span' d='block' bg='translucentDark' p='4@desktop 3@phone' h='100%'>
+        <Box as='span' d='block' bg='dark' p='4@desktop 3@phone' h='100%'>
           <Text
             d='block'
             color='secondaryText'
@@ -134,7 +134,7 @@ export const OpenSource = props => (
         </Project>
 
         <Project name='style-hooks' skills={['React', 'JavaScript', 'CSS']}>
-          <span aria-hidden>🧚‍♀</span> ️Turn your React function components into responsive
+          <span aria-hidden>🧚♀</span> ️Turn your React function components into responsive
           components with style props using Style Hooks and Emotion
         </Project>
 
