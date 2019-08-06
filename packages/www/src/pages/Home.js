@@ -22,8 +22,8 @@ const RecentProject = ({icon, href, name, children}) => (
       <Box
         as='span'
         w='148@tablet auto@phone'
-        minW='148@tablet 100%@phone'
-        h='240@phone auto@tablet'
+        minW='156@tablet 100%@phone'
+        h='272@phone auto@tablet'
         css={css`background: url(${icon}); background-size: cover; background-position: center;`}
         aria-hidden
       />

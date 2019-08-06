@@ -98,7 +98,7 @@ export const colors = {
   impactText: 'rgba(40, 36, 42, 1)',
   accentText: defaultColors.grey,
   primary: defaultColors.red,
-  translucentDark: 'rgba(40, 36, 42, 0.95)',
+  translucentDark: 'rgba(40, 36, 42, 0.9)',
   primaryLink: defaultColors.red
 }
 
