@@ -65,7 +65,15 @@ const Home = () => (
             </Text>
           </Text>
 
-          <Box kind='row' column='@phone' row='@tablet' m='t3@desktop t5@phone' justify='center@phone start@desktop' css={css}>
+          <Box
+            flex
+            w='100%'
+            column='@phone'
+            row='@tablet'
+            m='t3@desktop t5@phone'
+            justify='center@phone start@desktop'
+            css={css}
+          >
             <TransitionDrop fromBottom={16} easing='swiftMove'>
               {({css}) => (
                 <LinkButton to={urls.resume()} kind='solid' css={css}>
