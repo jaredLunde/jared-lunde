@@ -300,10 +300,10 @@ const Resume = () => (
               rapidly launching and iterating on serverless landing pages for ad campaigns
             </Box>
             <Box kind='li'>
-              Managed thousands of dollars in monthly ad spends
+              Delivered pages in &lt;3.5 sec TTI on slow 4G devices
             </Box>
             <Box kind='li'>
-              Generated up to 100 quality leads for clients each month
+              Generated as many as 100 quality leads for clients each month
             </Box>
           </Text>
         </Experience>
